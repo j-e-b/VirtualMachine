@@ -1,3 +1,7 @@
+# Overview
+
+This is an implementation of a virtual machine known as the P-machine. The P-machine is a stack machine with two memory stores: the "stack", which is organized as a stack and contains the data to be used by the PM/0 CPU, and the "code", which is organized as a list and contains the instructions for the virtual machine. The PM/0 CPU has four registers to handle the stack and code segments: The registers are named base pointer (BP), stack pointer (SP), program counter (PC), and instruction register (IR). The machine also has a register file (RF) with sixteen registers (0-15).
+
 # Components
 
 * [Makefile](Makefile): The makefile that helps to build, test and clean.
