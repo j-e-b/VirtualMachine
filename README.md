@@ -6,9 +6,9 @@
 
 * [data.h](data.h): Defines the `Instruction` and `VirtualMachine` data types, and constants.
 
-* [vm.h](vm.h): Includes the declaration of the `simulateVM()` function, which is needed to be implemented in [vm.c](vm.c) file by you.
+* [vm.h](vm.h): Includes the declaration of the `simulateVM()` function.
 
-* [vm.c](vm.c): The only file that needs modifying by you. Also, this file is the only file that is going to be used while grading your assignment. Other files are going to be replaced by their originals.
+* [vm.c](vm.c): The driver of the virtual machine.
 
 # Command Line Arguments
 Usage: `./vm.out (ins_inp_file) (simul_outp_file) [vm_inp_file=stdin] [vm_outp_file=stdout]`
