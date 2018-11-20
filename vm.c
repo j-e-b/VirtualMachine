@@ -8,10 +8,6 @@
 /* Declarations                                                                         */
 /* ************************************************************************************ */
 
-/**
- * Recommended design includes the following functions implemented.
- * However, you are free to change them as you wish inside the vm.c file.
- * */
 void initVM(VirtualMachine*);
 
 int readInstructions(FILE*, Instruction*);
@@ -28,9 +24,7 @@ int executeInstruction(VirtualMachine* vm, Instruction ins, FILE* vmIn, FILE* vm
 /* Global Data and misc structs & enums                                                 */
 /* ************************************************************************************ */
 
-/**
- * allows conversion from opcode to opcode string
- * */
+// Allows conversion from opcode to opcode string.
 const char *opcodes[] =
 {
     "illegal", // opcode 0 is illegal
@@ -47,9 +41,7 @@ enum { CONT, HALT };
 /* Definitions                                                                          */
 /* ************************************************************************************ */
 
-/**
- * Initialize Virtual Machine
- * */
+// Initialize Virtual Machine
 void initVM(VirtualMachine* vm)
 {
     if(vm)
@@ -62,10 +54,9 @@ void initVM(VirtualMachine* vm)
     }
 }
 
-/**
- * Fill the (ins)tructions array by reading instructions from (in)put file
- * Return the number of instructions read
- * */
+
+// Fill the (ins)tructions array by reading instructions from (in)put file
+// Return the number of instructions read
 int readInstructions(FILE* in, Instruction* ins)
 {
     // Instruction index
@@ -80,9 +71,7 @@ int readInstructions(FILE* in, Instruction* ins)
     return i;
 }
 
-/**
- * Dump instructions to the output file
- * */
+// Dump instructions to the output file
 void dumpInstructions(FILE* out, Instruction* ins, int numOfIns)
 {
     // Header
@@ -103,9 +92,7 @@ void dumpInstructions(FILE* out, Instruction* ins, int numOfIns)
     }
 }
 
-/**
- * Returns the base pointer for the lexiographic level L
- * */
+// Returns the base pointer for the lexiographic level L
 int getBasePointer(int *stack, int currentBP, int L)
 {
   int base_ptr = currentBP;
@@ -153,12 +140,10 @@ void dumpStack(FILE* out, int* stack, int sp, int bp)
     }
 }
 
-/**
- * Executes the (ins)truction on the (v)irtual (m)achine.
- * This changes the state of the virtual machine.
- * Returns HALT if the executed instruction was meant to halt the VM.
- * .. Otherwise, returns CONT
- * */
+// Executes the (ins)truction on the (v)irtual (m)achine.
+// This changes the state of the virtual machine.
+// Returns HALT if the executed instruction was meant to halt the VM.
+// .. Otherwise, returns CONT
 int executeInstruction(VirtualMachine* vm, Instruction ins, FILE* vmIn, FILE* vmOut)
 {
     switch(ins.op)

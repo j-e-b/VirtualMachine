@@ -13,9 +13,8 @@ typedef struct {
     int m;   // M
 } Instruction;
 
-/**
- * Virtual machine state holder
- * */
+
+// Virtual machine state holder.
 typedef struct VirtualMachine {
     /**
      * registers:
@@ -26,14 +25,10 @@ typedef struct VirtualMachine {
      * */
     int BP, SP, PC, IR;
 
-    /**
-     * register file
-     * */
+    // Register file.
     int RF[REGISTER_FILE_REG_COUNT];
 
-    /**
-     * stack
-     * */
+    // Stack.
     int stack[MAX_STACK_HEIGHT];
 } VirtualMachine;
 
