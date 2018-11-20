@@ -1,9 +1,4 @@
-# Assignment 1
-In this assignment, you are going to implement a virtual machine whose specifications are included in the assignment text. This README file explains the implementation details and introduces the repository.
-
-For your convenience, a repository was prepared containing C files, a Makefile and tester-grader scripts with test cases. These files were used to initialize your repository.
-
-Below are the brief explanations about the files included in your repository. For detailed explanations, you should follow the comments inside those files.
+# Components
 
 * [Makefile](Makefile): The makefile that helps to build, test and clean.
 
