@@ -41,7 +41,7 @@ enum { CONT, HALT };
 /* Definitions                                                                          */
 /* ************************************************************************************ */
 
-// Initialize Virtual Machine
+// Initialize Virtual Machine.
 void initVM(VirtualMachine* vm)
 {
     if(vm)
@@ -55,8 +55,8 @@ void initVM(VirtualMachine* vm)
 }
 
 
-// Fill the (ins)tructions array by reading instructions from (in)put file
-// Return the number of instructions read
+// Fill the (ins)tructions array by reading instructions from (in)put file.
+// Return the number of instructions read.
 int readInstructions(FILE* in, Instruction* ins)
 {
     // Instruction index
@@ -71,7 +71,7 @@ int readInstructions(FILE* in, Instruction* ins)
     return i;
 }
 
-// Dump instructions to the output file
+// Dump instructions to the output file.
 void dumpInstructions(FILE* out, Instruction* ins, int numOfIns)
 {
     // Header
@@ -92,7 +92,7 @@ void dumpInstructions(FILE* out, Instruction* ins, int numOfIns)
     }
 }
 
-// Returns the base pointer for the lexiographic level L
+// Returns the base pointer for the lexiographic level L.
 int getBasePointer(int *stack, int currentBP, int L)
 {
   int base_ptr = currentBP;
@@ -106,8 +106,8 @@ int getBasePointer(int *stack, int currentBP, int L)
   return base_ptr;
 }
 
-// Function that dumps the whole stack into output file
-// Do not forget to use '|' character between stack frames
+// Function that dumps the whole stack into output file.
+// Do not forget to use '|' character between stack frames.
 void dumpStack(FILE* out, int* stack, int sp, int bp)
 {
     if(bp == 0)
@@ -174,7 +174,6 @@ int executeInstruction(VirtualMachine* vm, Instruction ins, FILE* vmIn, FILE* vm
         // levels down.
         case 4:
           vm->stack[getBasePointer(vm->stack, vm->BP, ins.l) + ins.m - 1] = vm->RF[ins.r];
-          //printf("get BP: %d, ins.m: %d\n", getBasePointer(vm->stack, vm->BP, ins.l),  ins.m);
           break;
 
         // Opcode: "CAL".
